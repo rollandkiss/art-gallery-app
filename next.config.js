@@ -3,6 +3,17 @@ const nextConfig = {
   compiler: {
     styledComponents: true,
   },
+
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "example-apis.vercel.app",
+        port: "",
+      },
+    ],
+  },
+
   reactStrictMode: true,
   webpack(config) {
     config.module.rules.push({
