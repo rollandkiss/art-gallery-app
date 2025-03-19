@@ -1,10 +1,9 @@
 import ArtGalleryList from "@/components/ArtGalleryList";
 
-
-export default function HomePage() {
+export default function HomePage({ newData }) {
   return (
     <>
-      <ArtGalleryList />
+      <ArtGalleryList newData={newData} />
     </>
   );
 }
