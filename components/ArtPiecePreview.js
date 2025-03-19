@@ -9,16 +9,17 @@ export default function ArtPiecePreview({
   artworkArtist,
 }) {
   return (
-    <li>
-      <p>{artworkName}</p>
-      <Image
-        src={artworkSource}
-        alt={artworkAltText}
-        width={200}
-        height={200}
-      />
-      <p>{artworkArtist}</p>
-      <Link href={`/details-page/${slug}`}>Details here</Link>
-    </li>
+    <>
+      <p>Artwork Name: {artworkName}</p>
+      <Link href={`/details-page/${slug}`}>
+        <Image
+          src={artworkSource}
+          alt={artworkAltText}
+          width={200}
+          height={200}
+        />
+      </Link>
+      <p>Artist: {artworkArtist}</p>
+    </>
   );
 }
