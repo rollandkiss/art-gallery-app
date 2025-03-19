@@ -1,10 +1,11 @@
 import Navigation from "@/components/Navigation";
 import ArtGalleryList from "@/components/ArtGalleryList";
 
-export default function Gallery() {
+export default function Gallery({ newData }) {
   return (
     <>
-      <ArtGalleryList />
+      <li></li>
+      <ArtGalleryList newData={newData} />
       <Navigation />
     </>
   );
