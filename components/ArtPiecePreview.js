@@ -1,14 +1,15 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function ArtPiecePreview({
-  key,
+  slug,
   artworkSource,
   artworkName,
   artworkAltText,
   artworkArtist,
 }) {
   return (
-    <li key={key}>
+    <li>
       <p>{artworkName}</p>
       <Image
         src={artworkSource}
@@ -17,6 +18,7 @@ export default function ArtPiecePreview({
         height={200}
       />
       <p>{artworkArtist}</p>
+      <Link href={`/details-page/${slug}`}>Hier steht Link dann</Link>
     </li>
   );
 }

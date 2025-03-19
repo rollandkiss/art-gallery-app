@@ -27,6 +27,7 @@ export default function ArtGalleryList() {
             artworkName={artwork.name}
             artworkAltText={artwork.name}
             artworkArtist={artwork.artist}
+            slug={artwork.slug}
           />
         ))}
       </ul>
