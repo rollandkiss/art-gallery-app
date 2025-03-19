@@ -1,9 +1,10 @@
 import useSWR from "swr";
 import ArtPiecePreview from "./ArtPiecePreview";
+import SpotLight from "./SpotLight";
 
 const fetcher = (url) => fetch(url).then((r) => r.json());
 
-export default function ArtGalleryList() {
+export default function ArtGalleryList({ props }) {
   const URL = "https://example-apis.vercel.app/api/art";
   const { data, error, isLoading } = useSWR(URL, fetcher);
 
@@ -16,21 +17,22 @@ export default function ArtGalleryList() {
   // artworkName,
   // artworkAltText,
   // artworkArtist,
+  const randomValue = getRandomCard(data.length);
+
   return (
     <>
       <h1>Art Gallery</h1>
-      <ul>
-        {data.map((artwork) => (
-          <ArtPiecePreview
-            key={artwork.slug}
-            artworkSource={artwork.imageSource}
-            artworkName={artwork.name}
-            artworkAltText={artwork.name}
-            artworkArtist={artwork.artist}
-            slug={artwork.slug}
-          />
-        ))}
-      </ul>
+      <SpotLight
+        key={data[randomValue].slug}
+        artworkSource={data[randomValue].imageSource}
+        artworkName={data[randomValue].name}
+        artworkAltText={data[randomValue].name}
+        artworkArtist={data[randomValue].artist}
+      />
     </>
   );
+}
+
+function getRandomCard(max) {
+  return Math.floor(Math.random() * max);
 }
