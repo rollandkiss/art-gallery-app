@@ -1,7 +1,7 @@
 import ArtPiecePreview from "./ArtPiecePreview";
 
 export default function SpotLight({
-  key,
+  slug,
   artworkSource,
   artworkName,
   artworkAltText,
@@ -9,7 +9,7 @@ export default function SpotLight({
 }) {
   return (
     <ArtPiecePreview
-      key={key}
+      slug={slug}
       artworkSource={artworkSource}
       artworkName={artworkName}
       artworkAltText={artworkAltText}

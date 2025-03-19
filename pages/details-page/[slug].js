@@ -24,12 +24,12 @@ export default function DetailPage() {
       <Image
         src={getDetails.imageSource}
         alt={getDetails.name}
-        width={200}
-        height={200}
+        width={400}
+        height={400}
       />
-      <p>{getDetails.artist}</p>
-      <p>{getDetails.year}</p>
-      <p>{getDetails.genre}</p>
+      <p>Artist: {getDetails.artist}</p>
+      <p>Year: {getDetails.year}</p>
+      <p>Genre: {getDetails.genre}</p>
     </>
   );
 }

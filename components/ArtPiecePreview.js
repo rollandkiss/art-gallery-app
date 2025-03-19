@@ -18,7 +18,7 @@ export default function ArtPiecePreview({
         height={200}
       />
       <p>{artworkArtist}</p>
-      <Link href={`/details-page/${slug}`}>Hier steht Link dann</Link>
+      <Link href={`/details-page/${slug}`}>Details here</Link>
     </li>
   );
 }

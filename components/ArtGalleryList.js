@@ -1,10 +1,8 @@
 import useSWR from "swr";
-import ArtPiecePreview from "./ArtPiecePreview";
 import SpotLight from "./SpotLight";
-
 const fetcher = (url) => fetch(url).then((r) => r.json());
 
-export default function ArtGalleryList({ props }) {
+export default function ArtGalleryList() {
   const URL = "https://example-apis.vercel.app/api/art";
   const { data, error, isLoading } = useSWR(URL, fetcher);
 
@@ -23,7 +21,7 @@ export default function ArtGalleryList({ props }) {
     <>
       <h1>Art Gallery</h1>
       <SpotLight
-        key={data[randomValue].slug}
+        slug={data[randomValue].slug}
         artworkSource={data[randomValue].imageSource}
         artworkName={data[randomValue].name}
         artworkAltText={data[randomValue].name}
