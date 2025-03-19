@@ -15,7 +15,6 @@ export default function App({ Component, pageProps }) {
     return { ...element, isFavorit: false };
   });
 
-  //{slug: 'blue-and-red', artist: 'Jung-Hua Lui', name: 'Blue and Red', imageSource: 'https://example-apis.vercel.app/assets/art/blue-and-red.jpg', year: '2019', …}
   return (
     <>
       <Navigation />

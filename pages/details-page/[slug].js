@@ -1,35 +1,15 @@
 import { useRouter } from "next/router";
-import useSWR from "swr";
-import Image from "next/image";
-import Link from "next/link";
+import ArtDetails from "@/components/ArtDetails";
 
-const fetcher = (url) => fetch(url).then((r) => r.json());
-
-export default function DetailPage() {
+export default function DetailPage({ newData }) {
   const router = useRouter();
   const { slug } = router.query;
 
-  const URL = "https://example-apis.vercel.app/api/art";
-  const { data, error, isLoading } = useSWR(URL, fetcher);
+  const getDetails = newData.find((element) => slug === element.slug);
 
-  if (error) return <div>failed to load</div>;
-  if (isLoading) return <div>loading...</div>;
-
-  const getDetails = data.find((elementX) => slug === elementX.slug);
   return (
     <>
-      <Link href={"/"}>Zurück zur Gallerie</Link>
-
-      <p>{getDetails.name}</p>
-      <Image
-        src={getDetails.imageSource}
-        alt={getDetails.name}
-        width={400}
-        height={400}
-      />
-      <p>Artist: {getDetails.artist}</p>
-      <p>Year: {getDetails.year}</p>
-      <p>Genre: {getDetails.genre}</p>
+      <ArtDetails dataObject={getDetails} width={400} height={400} />
     </>
   );
 }

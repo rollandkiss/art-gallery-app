@@ -1,9 +1,9 @@
-import ArtGalleryList from "@/components/ArtGalleryList";
+import SpotLight from "@/components/SpotLight";
 
 export default function HomePage({ newData }) {
   return (
     <>
-      <ArtGalleryList newData={newData} />
+      <SpotLight newData={newData} />
     </>
   );
 }
