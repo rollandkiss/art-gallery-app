@@ -5,11 +5,11 @@ export default function SpotLight({ newData }) {
 
   return (
     <ArtPiecePreview
-      slug={newData[randomValue].slug}
-      artworkSource={newData[randomValue].imageSource}
-      artworkName={newData[randomValue].name}
-      artworkAltText={newData[randomValue].name}
-      artworkArtist={newData[randomValue].artist}
+      slug={newData[randomValue]?.slug}
+      artworkSource={newData[randomValue]?.imageSource}
+      artworkName={newData[randomValue]?.name}
+      artworkAltText={newData[randomValue]?.name}
+      artworkArtist={newData[randomValue]?.artist}
     />
   );
 }
