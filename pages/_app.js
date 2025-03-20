@@ -5,6 +5,16 @@ import { useState, useEffect } from "react";
 
 const fetcher = (url) => fetch(url).then((r) => r.json());
 
+// function DataCollect() {
+//   const URL = "https://example-apis.vercel.app/api/art";
+//   const { data, error, isLoading } = useSWR(URL, fetcher);
+
+//   if (error) return <div>failed to load</div>;
+//   if (isLoading) return <div>loading...</div>;
+
+//   return data;
+// }
+
 export default function App({ Component, pageProps }) {
   const URL = "https://example-apis.vercel.app/api/art";
   const { data, error, isLoading } = useSWR(URL, fetcher);
@@ -23,6 +33,7 @@ export default function App({ Component, pageProps }) {
 
   if (error) return <div>failed to load</div>;
   if (isLoading) return <div>loading...</div>;
+  // console.log(newData);
 
   function handleFavorit(slug) {
     const favoriteArtwork = newData.find((element) => element.slug === slug);
